@@ -12,18 +12,19 @@
 </head>
 <script>
     function init() {
+        let thisWidth = window.screen.availWidth;
         let imgSize = document.getElementById('about_pets')
         let aboutContentSize = document.getElementById('about_content')
         let aboutPetsContent = document.getElementById('about_pets_content')
         let hAboutPetsContent = document.getElementById('h_about_pets_content')
         let pAboutPetsContent = document.getElementById('p_about_pets_content')
         let pAboutPetsContent1 = document.getElementById('p_about_pets_content1')
-        if (window.innerWidth <= 840) {
+        if (thisWidth <= 840) {
             pAboutPetsContent1.className = 'p_about_pets_content1_840'
             aboutPetsContent.className = 'about_pets_content_840'
             imgSize.className = 'about_pets_840'
             aboutContentSize.className = 'about_content_840'
-            if (window.innerWidth <= 470) {
+            if (thisWidth <= 470) {
                 pAboutPetsContent.className = 'p_about_pets_content_mobil'
                 pAboutPetsContent1.className = 'p_about_pets_content1_mobil'
                 hAboutPetsContent.className = 'h_about_pets_content_mobil'
@@ -31,7 +32,7 @@
                 imgSize.className = 'about_pets_mobil'
                 aboutContentSize.className = 'about_content_mobil'
             }
-            else if (window.innerWidth >= 470) {
+            else if (thisWidth >= 470) {
                 pAboutPetsContent.className = 'p_about_pets_content'
                 pAboutPetsContent1.className = 'p_about_pets_content1_840'
                 hAboutPetsContent.className = 'h_about_pets_content'
@@ -40,7 +41,7 @@
                 aboutContentSize.className = 'about_content_840'
             }
         }
-        else if (window.innerWidth >= 840) {
+        else if (thisWidth >= 840) {
             pAboutPetsContent1.className = 'p_about_pets_content1'
             aboutPetsContent.className = 'about_pets_content'
             imgSize.className = 'about_pets'
