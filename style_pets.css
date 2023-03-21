@@ -1,0 +1,208 @@
+.pets {
+    width: fit-content;
+    height: fit-content;
+    background: #F6F6F6;
+}
+
+.pets_content {
+    width: fit-content;
+    height: fit-content;
+    margin: 80px 40px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pets_content_mobil {
+    width: fit-content;
+    height: fit-content;
+    margin: 42px 10px 42px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h3_pets_content {
+    margin: 0px 400px 0px 400px;
+    width: 400px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.h3_pets_content_840 {
+    margin: 0px 154px 0px 154px;
+    width: 400px;
+    height: 90px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.h3_pets_content_mobil {
+    margin: 0px;
+    width: 300px;
+    height: 64px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.slider {
+    margin: 60px 0px 60px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slider_840 {
+    margin: 60px 0px 60px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slider_mobil {
+    margin: 42px 10px 42px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.button_meet_the_rest {
+    margin: 0px 470px 0px 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+    width: 261px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+}
+
+.button_meet_the_rest_840 {
+    margin: 0px 224px 0px 224px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+    width: 260px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+}
+
+.button_meet_the_rest_mobil {
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+    width: 260px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+}
+
+.button_pets {
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+}
+
+.card_pets {
+    display: flex;
+}
+
+.card_pets1 {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    margin-right: 90px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:first-child {
+    margin-left: 53px;
+}
+
+.card:last-child {
+    margin-right: 53px;
+}
+
+.pets_img {
+    width: 270px;
+    height: 270px;
+    border-radius: 9px 9px 0px 0px;
+}
+
+.pets_card_title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.button_primary {
+    margin: 30px 41.5px 30px 41.5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+    width: 187px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    justify-content: space-between;
+}
