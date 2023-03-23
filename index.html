@@ -29,20 +29,20 @@
     function initHeaderWidth() {
         let thisWidth = thisWindowWidth();
         let headerWidth = document.getElementById('header')
-        if (window.innerWidth > 1200) {
+        if (thisWidth > 1200) {
             headerWidth.style = 'width: 1200px'
         }
-        else if (window.innerWidth < 1200 && window.innerWidth >= 770) {
+        else if (thisWidth < 1200 && thisWidth >= 770) {
             headerWidth.style = 'width: 1200px'
         }
-        else if (window.innerWidth <= 768) {
-            if (window.innerWidth <= 768 && window.innerWidth > 375) {
+        else if (thisWidth <= 768) {
+            if (thisWidth <= 768 && thisWidth > 375) {
                 headerWidth.style = 'width: 708px'
             }
-            else if (window.innerWidth <= 320) {
+            else if (thisWidth <= 320) {
                 headerWidth.style = 'width: 290px'
             }
-            else if (window.innerWidth <= 375 && window.innerWidth > 320) {
+            else if (thisWidth <= 375 && thisWidth > 320) {
                 headerWidth.style = 'width: 315px'
             }
         }
