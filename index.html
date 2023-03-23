@@ -254,7 +254,7 @@
     <header id="header" class="header">
         <div class="header_logo">
             <a href="./index.html" class="header_logo-link">
-                <img src="./svg/logo.svg" alt="">
+                <img src="./svg/logo.svg" alt="Логотип">
             </a>
         </div>
 
@@ -301,13 +301,13 @@
                 <button id="button_start_content" class="button_start_content">Make a friend</button>
             </div>
 
-            <img id="start_screen_puppy" class="start_screen_puppy" src="./svg/start-screen-puppy.svg" alt="">
+            <img id="start_screen_puppy" class="start_screen_puppy" src="./svg/start-screen-puppy.svg" alt="Щенок">
         </div>
     </div>
 
     <div class="about">
         <div id="about_content" class="about_content">
-            <img id="about_pets" class="about_pets" src="./svg/about-pets.svg" alt="">
+            <img id="about_pets" class="about_pets" src="./svg/about-pets.svg" alt="Кошечка и собачка">
             <div id="about_pets_content" class="about_pets_content">
                 <h3 id="h_about_pets_content" class="h_about_pets_content">About the shelter “Cozy
                     House”</h3>
@@ -334,8 +334,8 @@
             <h3 id="h3_pets_content" class="h3_pets_content">Our friends who
                 are looking for a house</h3>
             <div id="slider" class="slider">
-                <button id="buttonLeft" class="button_pets"><img src="./svg/arrow-left.svg" alt=""></button>
-                <button id="buttonWrite" class="button_pets"><img src="./svg/arrow-wrire.svg" alt=""></button>
+                <button id="buttonLeft" class="button_pets"><img src="./svg/arrow-left.svg" alt="Кнопка левей"></button>
+                <button id="buttonWrite" class="button_pets"><img src="./svg/arrow-wrire.svg" alt="Кнопка правей"></button>
             </div>
             <button id="button_meet_the_rest" class="button_meet_the_rest">Get to know the rest</button>
         </div>
@@ -478,6 +478,7 @@
             let img = document.createElement('img');
             img.className = 'pets_img';
             img.src = String(mas1[a].src);
+            img.alt = String(mas1[a].name);
             cardPets.children[i].appendChild(img);
 
             let pPets = document.createElement('p');

@@ -87,11 +87,11 @@ a {
 }
 
 .header_item:first-child {
-    margin-left: 0px;
+    margin-left: auto;
 }
 
 .header_item:last-child {
-    margin-right: 0px;
+    margin-right: auto;
 }
 
 
