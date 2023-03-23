@@ -27,7 +27,7 @@
     }
 
     function initHeaderWidth() {
-        let thisWidth = window.innerWidth;
+        let thisWidth = thisWindowWidth();
         let headerWidth = document.getElementById('header')
         if (window.innerWidth > 1200) {
             headerWidth.style = 'width: 1200px'
@@ -49,7 +49,7 @@
     }
 
     function initHeader() {
-        let thisWidth = window.innerWidth;
+        let thisWidth = thisWindowWidth();
         let header = document.getElementById('header')
         let menu = document.getElementById('menu')
         let menuBtn = document.getElementById('menu-btn')
@@ -58,8 +58,22 @@
         let headerList = document.getElementById('header_list')
         let headerItem = document.getElementById('header_item')
         let headerLink = document.getElementById('header_link')
-        if (thisWidth <= 375) {
+        if (thisWidth <= 320) {
             header.className = 'header_mobil'
+            menu.className = 'menu_mobil'
+            menuBtn.className = 'menu-btn_320'
+            headerNavMenu.className = 'header_nav_menu_mobil'
+            headerList.className = 'header_list_mobil'
+            let c = headerList.children
+            for (let i of c) {
+                i.className = 'header_item_mobil'
+                for (let y of i.children) {
+                    y.className = 'header_link_mobil'
+                }
+            }
+        }
+        else if (thisWidth > 320 && thisWidth <= 375) {
+            header.className = 'header'
             menu.className = 'menu_mobil'
             menuBtn.className = 'menu-btn_320'
             headerNavMenu.className = 'header_nav_menu_mobil'
@@ -149,7 +163,7 @@
             aboutPetsContent.className = 'about_pets_content_768'
             imgSize.className = 'about_pets_768'
             aboutContentSize.className = 'about_content_768'
-            if (thisWidth <= 375 && thisWidth >= 320) {
+            if (thisWidth <= 375 && thisWidth > 320) {
                 pAboutPetsContent.className = 'p_about_pets_content_mobil'
                 pAboutPetsContent1.className = 'p_about_pets_content1_mobil'
                 hAboutPetsContent.className = 'h_about_pets_content_mobil'
