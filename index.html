@@ -30,20 +30,20 @@
         let thisWidth = thisWindowWidth();
         let headerWidth = document.getElementById('header')
         if (thisWidth > 1200) {
-            headerWidth.style = 'width: 1200px'
+            return headerWidth.style = 'width: 1200px'
         }
         else if (thisWidth < 1200 && thisWidth >= 770) {
-            headerWidth.style = 'width: 1200px'
+            return headerWidth.style = 'width: 1200px'
         }
         else if (thisWidth <= 768) {
             if (thisWidth <= 768 && thisWidth > 375) {
-                headerWidth.style = 'width: 708px'
+                return headerWidth.style = 'width: 708px'
             }
             else if (thisWidth <= 320) {
-                headerWidth.style = 'width: 290px'
+                return headerWidth.style = 'width: 290px'
             }
             else if (thisWidth <= 375 && thisWidth > 320) {
-                headerWidth.style = 'width: 315px'
+                return headerWidth.style = 'width: 315px'
             }
         }
     }
@@ -74,7 +74,7 @@
         }
         else if (thisWidth > 320 && thisWidth <= 375) {
             header.className = 'header'
-            menu.className = 'menu_mobil'
+            menu.className = 'menu_mobil_375'
             menuBtn.className = 'menu-btn_320'
             headerNavMenu.className = 'header_nav_menu_mobil'
             headerList.className = 'header_list_mobil'
@@ -89,6 +89,7 @@
         else if (thisWidth > 375) {
             header.className = 'header'
             menu.className = 'menu'
+            menu.style = 'display: block;'
             menuBtn.className = 'menu-btn'
             menuBtn1.style = 'display: none;'
             headerNavMenu.className = 'header_nav_menu'
