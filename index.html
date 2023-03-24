@@ -5,354 +5,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style_header.css">
-    <link rel="stylesheet" href="style_start_screen.css">
-    <link rel="stylesheet" href="style_about.css">
-    <link rel="stylesheet" href="style_pets.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Document</title>
 </head>
 
-<script>
-    function thisWindowWidth() {
-        let a = window.screen.availWidth;
-        let b = window.innerWidth;
-        if (a > b) {
-            return b;
-        }
-        else if (a <= b) {
-            return a;
-        }
-    }
-
-    function initHeaderWidth() {
-        let thisWidth = thisWindowWidth();
-        let headerWidth = document.getElementById('header')
-        if (thisWidth > 1200) {
-            return headerWidth.style = 'width: 1200px'
-        }
-        else if (thisWidth < 1200 && thisWidth >= 770) {
-            return headerWidth.style = 'width: 1200px'
-        }
-        else if (thisWidth <= 768) {
-            if (thisWidth <= 768 && thisWidth > 375) {
-                return headerWidth.style = 'width: 708px'
-            }
-            else if (thisWidth <= 320) {
-                return headerWidth.style = 'width: 290px'
-            }
-            else if (thisWidth <= 375 && thisWidth > 320) {
-                return headerWidth.style = 'width: 315px'
-            }
-        }
-    }
-
-    function initHeader() {
-        let thisWidth = thisWindowWidth();
-        let header = document.getElementById('header')
-        let menu = document.getElementById('menu')
-        let menuBtn = document.getElementById('menu-btn')
-        let menuBtn1 = document.getElementById('menu-btn1_320')
-        let headerNavMenu = document.getElementById('header_nav_menu')
-        let headerList = document.getElementById('header_list')
-        let headerItem = document.getElementById('header_item')
-        let headerLink = document.getElementById('header_link')
-        if (thisWidth <= 320) {
-            header.className = 'header_mobil'
-            menu.className = 'menu_mobil'
-            menu.style = 'display: none;'
-            menuBtn.className = 'menu-btn_320'
-            menuBtn.style = 'display: block;'
-            menuBtn1.style = 'display: none;'
-            headerNavMenu.className = 'header_nav_menu_mobil'
-            headerList.className = 'header_list_mobil'
-            let c = headerList.children
-            for (let i of c) {
-                i.className = 'header_item_mobil'
-                for (let y of i.children) {
-                    y.className = 'header_link_mobil'
-                }
-            }
-        }
-        else if (thisWidth > 320 && thisWidth <= 375) {
-            header.className = 'header'
-            menu.className = 'menu_mobil_375'
-            menu.style = 'display: none;'
-            menuBtn.className = 'menu-btn_320'
-            menuBtn.style = 'display: block;'
-            menuBtn1.style = 'display: none;'
-            headerNavMenu.className = 'header_nav_menu_mobil'
-            headerList.className = 'header_list_mobil'
-            let c = headerList.children
-            for (let i of c) {
-                i.className = 'header_item_mobil'
-                for (let y of i.children) {
-                    y.className = 'header_link_mobil'
-                }
-            }
-        }
-        else if (thisWidth > 375) {
-            header.className = 'header'
-            menu.className = 'menu'
-            menu.style = 'display: block;'
-            menuBtn.className = 'menu-btn'
-            menuBtn.style = 'display: none;'
-            menuBtn1.style = 'display: none;'
-            headerNavMenu.className = 'header_nav_menu'
-            headerList.className = 'header_list'
-            headerItem.className = 'header_item'
-            headerLink.className = 'header_link'
-            let c = headerList.children
-            for (let i of c) {
-                i.className = 'header_item'
-                for (let y of i.children) {
-                    y.className = 'header_link'
-                }
-            }
-        }
-    }
-
-    function initStartScreen() {
-        let thisWidth = thisWindowWidth();
-        let startScreenContent = document.getElementById('start_screen_content')
-        let startScreenPuppy = document.getElementById('start_screen_puppy')
-        let startContent = document.getElementById('start_content')
-        let h2StartContent = document.getElementById('h2_start_content')
-        let pStartContent = document.getElementById('p_start_content')
-        let buttonStartContent = document.getElementById('button_start_content')
-        if (thisWidth <= 768 && thisWidth > 375) {
-            startScreenContent.className = 'start_screen_content_768'
-            startScreenPuppy.className = 'start_screen_puppy_768'
-            startContent.className = 'start_content_768'
-            h2StartContent.className = 'h2_start_content'
-            pStartContent.className = 'p_start_content'
-            buttonStartContent.className = 'button_start_content_768'
-        }
-        else if (thisWidth > 768) {
-            startScreenContent.className = 'start_screen_content'
-            startScreenPuppy.className = 'start_screen_puppy'
-            startContent.className = 'start_content'
-            h2StartContent.className = 'h2_start_content'
-            pStartContent.className = 'p_start_content'
-            buttonStartContent.className = 'button_start_content'
-        }
-        else if (thisWidth <= 375 && thisWidth > 320) {
-            startScreenContent.className = 'start_screen_content_mobil'
-            startScreenPuppy.className = 'start_screen_puppy_mobil'
-            startContent.className = 'start_content_mobil'
-            h2StartContent.className = 'h2_start_content_mobil'
-            pStartContent.className = 'p_start_content_mobil'
-            buttonStartContent.className = 'button_start_content_mobil'
-
-        }
-        else if (thisWidth <= 320) {
-            startScreenContent.className = 'start_screen_content_mobil_320'
-            startScreenPuppy.className = 'start_screen_puppy_mobil_320'
-            startContent.className = 'start_content_mobil_320'
-            h2StartContent.className = 'h2_start_content_mobil_320'
-            pStartContent.className = 'p_start_content_mobil_320'
-            buttonStartContent.className = 'button_start_content_mobil_320'
-
-        }
-
-    }
-
-    function initAbout() {
-        let thisWidth = thisWindowWidth();
-        let imgSize = document.getElementById('about_pets')
-        let aboutContentSize = document.getElementById('about_content')
-        let aboutPetsContent = document.getElementById('about_pets_content')
-        let hAboutPetsContent = document.getElementById('h_about_pets_content')
-        let pAboutPetsContent = document.getElementById('p_about_pets_content')
-        let pAboutPetsContent1 = document.getElementById('p_about_pets_content1')
-        if (thisWidth <= 768) {
-            pAboutPetsContent1.className = 'p_about_pets_content1_768'
-            aboutPetsContent.className = 'about_pets_content_768'
-            imgSize.className = 'about_pets_768'
-            aboutContentSize.className = 'about_content_768'
-            if (thisWidth <= 375 && thisWidth > 320) {
-                pAboutPetsContent.className = 'p_about_pets_content_mobil'
-                pAboutPetsContent1.className = 'p_about_pets_content1_mobil'
-                hAboutPetsContent.className = 'h_about_pets_content_mobil'
-                aboutPetsContent.className = 'about_pets_content_mobil_375'
-                imgSize.className = 'about_pets_mobil'
-                aboutContentSize.className = 'about_content_mobil'
-            }
-            else if (thisWidth <= 320) {
-                pAboutPetsContent.className = 'p_about_pets_content_mobil'
-                pAboutPetsContent1.className = 'p_about_pets_content1_mobil'
-                hAboutPetsContent.className = 'h_about_pets_content_mobil'
-                aboutPetsContent.className = 'about_pets_content_mobil'
-                imgSize.className = 'about_pets_mobil'
-                aboutContentSize.className = 'about_content_mobil'
-            }
-            else if (thisWidth > 375) {
-                pAboutPetsContent.className = 'p_about_pets_content'
-                pAboutPetsContent1.className = 'p_about_pets_content1_768'
-                hAboutPetsContent.className = 'h_about_pets_content'
-                aboutPetsContent.className = 'about_pets_content_768'
-                imgSize.className = 'about_pets_768'
-                aboutContentSize.className = 'about_content_768'
-            }
-        }
-        else if (thisWidth >= 768) {
-            pAboutPetsContent1.className = 'p_about_pets_content1'
-            aboutPetsContent.className = 'about_pets_content'
-            imgSize.className = 'about_pets'
-            aboutContentSize.className = 'about_content'
-        }
-
-    }
-
-    function initPets() {
-        let thisWidth = thisWindowWidth()
-        let petsContent = document.getElementById('pets_content')
-        let h3PetsContent = document.getElementById('h3_pets_content')
-        let thisSlider = document.getElementById('slider')
-        let cardPets = document.getElementById('card_pets')
-        let buttonMeetTheRest = document.getElementById('button_meet_the_rest')
-        if (thisWidth <= 768) {
-            h3PetsContent.className = 'h3_pets_content_768'
-            thisSlider.className = 'slider_768'
-            buttonMeetTheRest.className = 'button_meet_the_rest_768'
-            petsContent.className = 'pets_content_768'
-            if (thisWidth <= 375 && thisWidth > 320) {
-                petsContent.className = 'pets_content_mobil_375'
-                h3PetsContent.className = 'h3_pets_content_mobil'
-                thisSlider.className = 'slider_mobil'
-                buttonMeetTheRest.className = 'button_meet_the_rest_mobil'
-
-            }
-            else if (thisWidth > 375) {
-                petsContent.className = 'pets_content_768'
-                h3PetsContent.className = 'h3_pets_content_768'
-                thisSlider.className = 'slider_768'
-                buttonMeetTheRest.className = 'button_meet_the_rest_768'
-            }
-            else if (thisWidth <= 320) {
-                petsContent.className = 'pets_content_mobil'
-                h3PetsContent.className = 'h3_pets_content_mobil'
-                thisSlider.className = 'slider_mobil'
-                buttonMeetTheRest.className = 'button_meet_the_rest_mobil'
-
-            }
-        }
-        else if (thisWidth >= 768) {
-            petsContent.className = 'pets_content'
-            h3PetsContent.className = 'h3_pets_content'
-            thisSlider.className = 'slider'
-        }
-
-    }
-</script>
-
-<body onload="initHeaderWidth(),initAbout(),initPets(),initStartScreen(),createElementsSlider(),initHeader()" ,
-    onresize="initHeaderWidth(),initAbout(),initPets(),initStartScreen(),createElementsSlider(),initHeader()">
-
-
-    <header id="header" class="header">
-        <div class="header_logo">
-            <a href="./index.html" class="header_logo-link">
-                <img src="./svg/logo.svg" alt="Логотип">
-            </a>
-        </div>
-
-        <div id="menu-btn" class="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="menu-btn1_320" class="menu-btn1_320">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div id="menu" class="menu">
-            <nav id="header_nav_menu" class="header_nav_menu">
-                <ul id="header_list" class="header_list">
-                    <li id="header_item" class="header_item">
-                        <a id="header_link" href="#!" class="header_link">About the shelter</a>
-                    </li>
-                    <li id="header_item" class="header_item">
-                        <a id="header_link" href="#!" class="header_link">Our pets</a>
-                    </li>
-                    <li id="header_item" class="header_item">
-                        <a id="header_link" href="#!" class="header_link">Help the shelter</a>
-                    </li>
-                    <li id="header_item" class="header_item">
-                        <a id="header_link" href="#!" class="header_link">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div id="start_screen" class="start_screen">
-        <div id="start_screen_content" class="start_screen_content">
-            <div id="start_content" class="start_content">
-                <h2 id="h2_start_content" class="h2_start_content">Not only people need a house</h2>
-                <p id="p_start_content" class="p_start_content">We offer to give a chance to a
-                    little and
-                    nice puppy with an extremely wide and open heart.
-                    He or she will love you more than anybody else in the
-                    world, you will see!</p>
-                <button id="button_start_content" class="button_start_content">Make a friend</button>
+<body onload="createElementsSlider()", onresize="createElementsSlider()">
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container _container">
+                <a href="./index.html" class="header__logo">
+                    <img src="./svg/logo.svg" alt="Логотип">
+                </a>
+                <div class="header__menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header__menu-btn1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#!" class="menu__link">About the shelter</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#!" class="menu__link">Our pets</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#!" class="menu__link">Help the shelter</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#!" class="menu__link">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <div class="screen__content">
+                <div class="not__only _container">
+                    <div class="not__only__container">
+                        <div class="not__only__content">
+                            <h2 class="not__only__title">Not only people need a house</h2>
+                            <div class="not__only__text">We offer to give a chance to a
+                                little and
+                                nice puppy with an extremely wide and open heart.
+                                He or she will love you more than anybody else in the
+                                world, you will see!
+                            </div>
+                            <button class="button__start__content">Make a friend</button>
+                        </div>
+                        <img class="not__only__puppy" src="./svg/start-screen-puppy.svg" alt="Щенок">
+                    </div>
+                </div>
+            </div>
+            <div class="about__content">
+                <div class="about _container">
+                    <div class="about__content">
+                        <img class="about__pets" src="./svg/about-pets.svg" alt="Кошечка и собачка">
+                        <div class="about__pets__content">
+                            <h3 class="about__title">About the shelter “Cozy
+                                House”</h3>
+                            <p class="about__text">Currently we have 121 dogs
+                                and 342 cats on our hands and
+                                statistics show that only 20% of them will find a
+                                family. The others will continue to live with us and
+                                will be waiting for a lucky chance to become dearly
+                                loved.</p>
+                            <p class="about__text1">We feed our wards with the
+                                best food and make sure that
+                                they do not get sick, feel comfortable (including
+                                psychologically) and well. We are supported by 87
+                                volunteers and 28 employees of various skill levels.
+                                About 12% of the animals are taken by the shelter staff.
+                                Taking care of the animals, they become attached to the
+                                pets and would hardly ever leave them alone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aur-friends__content">
+                <div class="aur-friends _container">
+                    <div id="pets_content" class="pets_content">
+                        <h3 class="pets__title">Our friends who
+                            are looking for a house</h3>
+                        <div id="slider" class="slider">
+                            <button id="buttonLeft" class="button_pets">
+                                <img src="./svg/arrow-left.svg" alt="Кнопка левей">
+                            </button>
+                            <button id="buttonWrite" class="button_pets">
+                                <img src="./svg/arrow-wrire.svg" alt="Кнопка правей">
+                            </button>
+                        </div>
+                        <button id="button_meet_the_rest" class="button_meet_the_rest">Get to know the rest</button>
+                    </div>
+                </div>
             </div>
 
-            <img id="start_screen_puppy" class="start_screen_puppy" src="./svg/start-screen-puppy.svg" alt="Щенок">
-        </div>
-    </div>
+            <div class="help"></div>
+            <div class="in_addition"></div>
+        </main>
+        <footer class="footer"></footer>
 
-    <div class="about">
-        <div id="about_content" class="about_content">
-            <img id="about_pets" class="about_pets" src="./svg/about-pets.svg" alt="Кошечка и собачка">
-            <div id="about_pets_content" class="about_pets_content">
-                <h3 id="h_about_pets_content" class="h_about_pets_content">About the shelter “Cozy
-                    House”</h3>
-                <p id="p_about_pets_content" class="p_about_pets_content">Currently we have 121 dogs
-                    and 342 cats on our hands and
-                    statistics show that only 20% of them will find a
-                    family. The others will continue to live with us and
-                    will be waiting for a lucky chance to become dearly
-                    loved.</p>
-                <p id="p_about_pets_content1" class="p_about_pets_content1">We feed our wards with the
-                    best food and make sure that
-                    they do not get sick, feel comfortable (including
-                    psychologically) and well. We are supported by 87
-                    volunteers and 28 employees of various skill levels.
-                    About 12% of the animals are taken by the shelter staff.
-                    Taking care of the animals, they become attached to the
-                    pets and would hardly ever leave them alone.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="pets" class="pets">
-        <div id="pets_content" class="pets_content">
-            <h3 id="h3_pets_content" class="h3_pets_content">Our friends who
-                are looking for a house</h3>
-            <div id="slider" class="slider">
-                <button id="buttonLeft" class="button_pets"><img src="./svg/arrow-left.svg" alt="Кнопка левей"></button>
-                <button id="buttonWrite" class="button_pets"><img src="./svg/arrow-wrire.svg" alt="Кнопка правей"></button>
-            </div>
-            <button id="button_meet_the_rest" class="button_meet_the_rest">Get to know the rest</button>
-        </div>
     </div>
 </body>
+
 <script>
-    function thisCardClass() {
-        if (thisWindowWidth() > 768) {
-            return 'card'
-        }
-        else if (thisWindowWidth() < 768 && thisWindowWidth() > 320) {
-            return 'card_768'
-        }
-        else if (thisWindowWidth() < 320) {
-            return 'card_mobil'
-        }
-    }
+    let menuBtn = document.querySelector('.header__menu-btn')
+    let menuBtn1 = document.querySelector('.header__menu-btn1')
+    let menu = document.querySelector('.menu')
+    menuBtn.addEventListener('click', function () {
+        menuBtn1.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
+    menuBtn1.addEventListener('click', function () {
+        menuBtn1.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
+</script>
+
+
+<script>
+
     function createElementsSlider() {
         function thisWindowWidth() {
             let a = window.screen.availWidth;
@@ -365,16 +145,28 @@
             }
         }
 
+        function thisCardClass() {
+            if (thisWindowWidth() > 768) {
+                return 'card'
+            }
+            else if (thisWindowWidth() < 768 && thisWindowWidth() > 425) {
+                return 'card_768'
+            }
+            else if (thisWindowWidth() < 425) {
+                return 'card_mobil'
+            }
+        }
+
 
         function getMasLength() {
             let b = thisWindowWidth();
             if (b > 768) {
                 return 3
             }
-            else if (b <= 768 && b > 375) {
+            else if (b <= 768 && b > 425) {
                 return 2
             }
-            else if (b <= 375) {
+            else if (b <= 425) {
                 return 1
             }
 
@@ -471,7 +263,7 @@
 
         function inputElement(a, i) {
             let div = document.createElement('div');
-            div.className = thisCardClass();
+            div.className = 'card';
             div.id = mas1[a].name;
             cardPets.appendChild(div);
 
@@ -587,27 +379,7 @@
                 }
             }
         }
-
     }
 </script>
-
-<script>
-    let menuBtn = document.getElementById('menu-btn')
-    let menuBtn1 = document.getElementById('menu-btn1_320')
-    let menu = document.getElementById('menu')
-    menuBtn.addEventListener('click', function () {
-        console.log(menu)
-        menuBtn.style = 'display: none';
-        menuBtn1.style = 'display: block';
-        menu.style = 'display: flex';
-    })
-    menuBtn1.addEventListener('click', function () {
-        console.log(menu)
-        menuBtn.style = 'display: block';
-        menuBtn1.style = 'display: none';
-        menu.style = 'display: none';
-    })
-</script>
-
 
 </html>
