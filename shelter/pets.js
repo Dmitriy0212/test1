@@ -6,7 +6,7 @@ for (let i = 0; i < menu1.children.length; i++) {
     for (let j = 0; j < menu1.children[i].children.length; j++) {
         let pathname2 = menu1.children[i].children[j].href.split('/')
         if (pathname2[pathname2.length - 1] == pathname[pathname.length - 1] || (pathname1[pathname1.length - 1]).includes(pathname2[pathname2.length - 1]) == true) (
-            (menu1.children[i].children[j]).style = 'border-bottom: 3px solid #F1CDB3;'
+            (menu1.children[i].children[j]).style = 'border-bottom: 2px solid #F1CDB3;'
         )
     }
 }
@@ -18,17 +18,12 @@ for (let k = 0; k < menu1.children.length; k++) {
                     menu1.children[i].children[j].style = 'border-bottom: none;'
                 }
             }
-            this.style = 'border-bottom: 3px solid #F1CDB3;'
+            this.style = 'border-bottom: 2px solid #F1CDB3;'
         })
     }
 }
 
 
-
-
-
-
-/*let paig = 0*/
 let menuBtnPets = document.querySelector('.header__pets__menu-btn')
 let menuBtnPets1 = document.querySelector('.header__pets__menu-btn1')
 let menu = document.querySelector('.menu')
@@ -49,12 +44,12 @@ menuBtnPets1.addEventListener('click', function () {
 
 let mas = [
     { name: 'Katrine', src: './svg/pets-katrine.svg', id: '1' },
-    { name: 'Woody', src: './svg/pets-woody.svg', id: '2' },
-    { name: 'Jennifer', src: './svg/pets-jennifer.svg', id: '3' },
-    { name: 'Jek', src: './svg/pets-jek.svg', id: '4' },
-    { name: 'Sophia', src: './svg/pets-sophia.svg', id: '5' },
-    { name: 'Timmy', src: './svg/pets-timmy.svg', id: '6' },
-    { name: 'Charly', src: './svg/pets-charly.svg', id: '7' },
+    { name: 'Jennifer', src: './svg/pets-jennifer.svg', id: '2' },
+    { name: 'Woody', src: './svg/pets-woody.svg', id: '3' },
+    { name: 'Sophia', src: './svg/pets-sophia.svg', id: '4' },
+    { name: 'Timmy', src: './svg/pets-timmy.svg', id: '5' }, 
+    { name: 'Charly', src: './svg/pets-charly.svg', id: '6' },
+    { name: 'Jek', src: './svg/pets-jek.svg', id: '7' }, 
     { name: 'Scarlet', src: './svg/pets-scarlet.svg', id: '8' },
     { name: 'Freddie', src: './svg/pets-freddie.svg', id: '9' },
     { name: 'Katrine', src: './svg/pets-katrine.svg', id: '1' },
@@ -99,13 +94,13 @@ function thisWindowWidth() {
 
 function getMasLength() {
     let b = thisWindowWidth();
-    if (b > 768) {
+    if (b > 860) {
         return 8
     }
-    else if (b <= 768 && b > 425) {
+    else if (b <= 860 && b > 510) {
         return 6
     }
-    else if (b <= 425) {
+    else if (b <= 510) {
         return 3
     }
 
@@ -180,8 +175,8 @@ function init() {
     if (paigNumber.textContent == 1 || paigNumber.textContent == '') {
         buttonDn.disabled = true;
         buttonDnDn.disabled = true;
-        buttonDn.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;margin: 0px 10px 0px 0px;';
-        buttonDnDn.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;margin: 0px 10px 0px 0px;';
+        buttonDn.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
+        buttonDnDn.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
     }
     else if (paigNumber.textContent > 1) {
         buttonDn.disabled = false
@@ -192,8 +187,8 @@ function init() {
     if (paigNumber.textContent >= mas.length / lengthMas) {
         buttonUp.disabled = true
         buttonUpUp.disabled = true
-        buttonUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;margin: 0px 10px 0px 0px;';
-        buttonUpUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;';
+        buttonUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
+        buttonUpUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
     }
     else if (paigNumber.textContent < mas.length / lengthMas) {
         buttonUp.disabled = false
@@ -244,8 +239,8 @@ function init1() {
         buttonDnDn.style = 'user-select: all;';
         buttonUp.disabled = true
         buttonUpUp.disabled = true
-        buttonUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;margin: 0px 10px 0px 0px;';
-        buttonUpUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;margin: 0px 10px 0px 0px;';
+        buttonUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;';
+        buttonUpUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;';
     }
 
 

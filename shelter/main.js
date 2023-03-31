@@ -1,4 +1,29 @@
 "use strict"
+console.log(`Страница Main (60)\n
+1. Проверка верстки +4\n
+верстка страницы валидная: для проверки валидности вёрстки используйте сервис https://validator.w3.org/ . +4\n
+логотип в хедере состоит из текстовых элементов -\n
+страница содержит ровно один элемент <h1> -\n
+добавлен favicon -\n
+2. Вёрстка соответствует макету +35\n
+3. Требования к css +6\n
+4. Интерактивность элементов +9\n
+Страница Pets (40)\n
+5. Проверка верстки +4\n
+верстка страницы валидная: для проверки валидности вёрстки используйте сервис https://validator.w3.org/ . +4\n
+логотип в хедере состоит из текстовых элементов -\n
+страница содержит ровно один элемент <h1> -\n
+добавлен favicon -\n
+6. Вёрстка соответствует макету +15\n
+7. Требования к css +4\n
+8. Интерактивность элементов +11\n
+Заключительный бал-88 по моим скромным критериям`)
+
+
+
+
+
+
 let menu1 = document.querySelector('.menu__list')
 let pathname = document.location.pathname.split('/')
 let pathname1 = document.location.hash.split('/')
@@ -53,27 +78,27 @@ function createElementsSlider() {
 
     function getMasLength() {
         let b = thisWindowWidth();
-        if (b > 768) {
+        if (b > 860) {
             return 3
         }
-        else if (b <= 768 && b > 425) {
+        else if (b <= 860 && b > 510) {
             return 2
         }
-        else if (b <= 425) {
+        else if (b <= 510) {
             return 1
         }
 
     }
     let mas = [
-        { name: 'Katrine', src: './svg/pets-katrine.svg', id: '1' },
-        { name: 'Woody', src: './svg/pets-woody.svg', id: '2' },
-        { name: 'Jennifer', src: './svg/pets-jennifer.svg', id: '3' },
-        { name: 'Jek', src: './svg/pets-jek.svg', id: '4' },
-        { name: 'Sophia', src: './svg/pets-sophia.svg', id: '5' },
-        { name: 'Timmy', src: './svg/pets-timmy.svg', id: '6' },
-        { name: 'Charly', src: './svg/pets-charly.svg', id: '7' },
-        { name: 'Scarlet', src: './svg/pets-scarlet.svg', id: '8' },
-        { name: 'Freddie', src: './svg/pets-freddie.svg', id: '9' }
+        { name: 'Katrine', src: './shelter/svg/pets-katrine.svg', id: '1' },
+        { name: 'Jennifer', src: './shelter/svg/pets-jennifer.svg', id: '2' },
+        { name: 'Woody', src: './shelter/svg/pets-woody.svg', id: '3' },        
+        { name: 'Jek', src: './shelter/svg/pets-jek.svg', id: '4' },
+        { name: 'Sophia', src: './shelter/svg/pets-sophia.svg', id: '5' },
+        { name: 'Timmy', src: './shelter/svg/pets-timmy.svg', id: '6' },
+        { name: 'Charly', src: './shelter/svg/pets-charly.svg', id: '7' },
+        { name: 'Scarlet', src: './shelter/svg/pets-scarlet.svg', id: '8' },
+        { name: 'Freddie', src: './shelter/svg/pets-freddie.svg', id: '9' }
     ]
     let mas1 = []
     let a = 0;
