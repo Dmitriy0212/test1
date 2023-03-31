@@ -652,15 +652,19 @@ button:hover {
 /*-----------help-----------*/
 .help__content {
     display: flex;
+    width: 100%;
 }
 
 .help {
     display: flex;
+    width: 100%;
     margin: 80px auto 100px;
 }
 
 .help_content {
     display: flex;
+    width: 100%;
+    height: 100%;
     margin: auto;
     flex-direction: column;
     align-items: center;
@@ -677,18 +681,18 @@ button:hover {
     color: #545454;
     width: 350px;
     height: 91px;
-    margin: 0px 425px 60px;
+    margin: 0px 35.42% 5%;
 
 }
 
 .list__help {
     display: flex;
     flex-wrap: wrap;
-    width: 1030px;
-    height: 281px;
+    width: 85.84%;
+    height: 100%;
     flex-direction: row;
     align-content: space-between;
-    gap: 29px 120px;
+    gap: 55px 11.65%;
     justify-content: flex-end;
 }
 
@@ -707,7 +711,7 @@ button:hover {
 }
 
 .item__help:last-child {
-    margin: 0px 85px 0px 0px;
+    margin: 0px 8.4% 0px 0px;
 }
 
 
@@ -742,7 +746,7 @@ button:hover {
 }
 
 .in_addition>* :not(:last-child) {
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 21px 0px;
 }
 
 .donation__title {
