@@ -23,6 +23,10 @@
     .our__title {
         width: 60%;
     }
+
+    .button__start__content {
+        width: calc(45%*2);
+    }
 }
 
 @media (max-width:930px) {
@@ -102,9 +106,6 @@
 
     .not__only__text {
         width: 83%;
-    }
-    .button__start__content{
-        width: calc(45%*2);
     }
 
     /*-----------------------------------*/
