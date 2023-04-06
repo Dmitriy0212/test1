@@ -27,41 +27,201 @@ for (let k = 0; k < menu1.children.length; k++) {
 let menuBtnPets = document.querySelector('.header__pets__menu-btn')
 let menuBtnPets1 = document.querySelector('.header__pets__menu-btn1')
 let menu = document.querySelector('.menu')
+let bodyScrol = document.querySelector('body')
+let menuList = document.querySelector('.menu__list__pets')
+for (let item of menuList.children) {
+    item.addEventListener('click', function () {
+        menuBtnPets1.classList.toggle('active');
+        menuBtnPets.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
+}
 
 menuBtnPets.addEventListener('click', function () {
     menuBtnPets1.classList.toggle('active');
     menuBtnPets.classList.toggle('active');
     menu.classList.toggle('active');
+    bodyScrol.classList.toggle('active');
 })
 
 menuBtnPets1.addEventListener('click', function () {
     menuBtnPets1.classList.toggle('active');
     menuBtnPets.classList.toggle('active');
     menu.classList.toggle('active');
+    bodyScrol.classList.toggle('active');
 })
 
+function learnMore() {
+    function delMod() {
+        target.removeChild(divModWind)
+    }
+    let target = document.querySelector('.our-pets');
+    console.log(this.parentElement.id);
+    let divModWind = document.createElement('div');
+    divModWind.className = 'modal_window_with_button';
+    target.appendChild(divModWind);
+    let closeButton = document.createElement('button');
+    closeButton.className = 'close_button';
+    divModWind.appendChild(closeButton);
+    closeButton.addEventListener('click', delMod)
+    let divMod = document.createElement('div');
+    divMod.className = 'modal_window';
+    divModWind.appendChild(divMod);
+    for(let i = 0;i<objJson2.length;i++){
+        if(this.parentElement.id==objJson2[i].id){
+            let img = document.createElement('img');
+            img.className = 'modal_pet_img';
+            img.src = String(objJson2[i].src);
+            divMod.appendChild(img);
+            img.alt = String(objJson2[i].name);
+            let modalContent = document.createElement('div')
+            modalContent.className = 'modal_content';
+            divMod.appendChild(modalContent);
+            let namePet = document.createElement('h3');
+            namePet.textContent = String(objJson2[i].name);
+            namePet.className = 'modal_pet_name'
+            modalContent.appendChild(namePet);
+            let typeEndBreed = document.createElement('h4');
+            typeEndBreed.textContent = String(objJson2[i].type)+' - '+String(objJson2[i].breed);
+            typeEndBreed.className = 'modal_pet_type';
+            modalContent.appendChild(typeEndBreed);
+            let descripTion = document.createElement('h5');
+            descripTion.textContent = String(objJson2[i].description);
+            descripTion.className = 'modal_description';
+            modalContent.appendChild(descripTion);
+            let listModal = document.createElement('ul');
+            listModal.className = 'list_modal';
+            modalContent.appendChild(listModal);
+            let petAge = document.createElement('li');
+            petAge.className = 'item_modal';
+            petAge.innerHTML ='<b>'+'Age: '+'</b>'+String(objJson2[i].age);
+            let petInoculations = document.createElement('li');
+            petInoculations.className = 'item_modal';
+            petInoculations.innerHTML ='<b>'+'Inoculations: '+'</b>'+String(objJson2[i].inoculations);
+            let petDiseases = document.createElement('li');
+            petDiseases.className = 'item_modal';
+            petDiseases.innerHTML ='<b>'+'Diseases: '+'</b>'+String(objJson2[i].diseases);
+            let petParasites = document.createElement('li');
+            petParasites.className = 'item_modal';
+            petParasites.innerHTML ='<b>'+'Parasites: '+'</b>'+String(objJson2[i].parasites);
+            listModal.appendChild(petAge);
+            listModal.appendChild(petInoculations);
+            listModal.appendChild(petDiseases);
+            listModal.appendChild(petParasites);
+           
+            break;
+        }
+    }
+}
 
+function thisWindowHeight() {
+    if (thisWindowWidth() < 768) {
+        menu.style = `height: ${window.screen.availHeight}px;`
+    }
+}
 
-let mas = [
-    { name: 'Katrine', src: './svg/pets-katrine.svg', id: '1' },
-    { name: 'Jennifer', src: './svg/pets-jennifer.svg', id: '2' },
-    { name: 'Woody', src: './svg/pets-woody.svg', id: '3' },
-    { name: 'Sophia', src: './svg/pets-sophia.svg', id: '4' },
-    { name: 'Timmy', src: './svg/pets-timmy.svg', id: '5' }, 
-    { name: 'Charly', src: './svg/pets-charly.svg', id: '6' },
-    { name: 'Jek', src: './svg/pets-jek.svg', id: '7' }, 
-    { name: 'Scarlet', src: './svg/pets-scarlet.svg', id: '8' },
-    { name: 'Freddie', src: './svg/pets-freddie.svg', id: '9' },
-    { name: 'Katrine', src: './svg/pets-katrine.svg', id: '1' },
-    { name: 'Woody', src: './svg/pets-woody.svg', id: '2' },
-    { name: 'Jennifer', src: './svg/pets-jennifer.svg', id: '3' },
-    { name: 'Jek', src: './svg/pets-jek.svg', id: '4' },
-    { name: 'Sophia', src: './svg/pets-sophia.svg', id: '5' },
-    { name: 'Timmy', src: './svg/pets-timmy.svg', id: '6' },
-    { name: 'Charly', src: './svg/pets-charly.svg', id: '7' },
-    { name: 'Scarlet', src: './svg/pets-scarlet.svg', id: '8' },
-    { name: 'Freddie', src: './svg/pets-freddie.svg', id: '9' }
+let objJson = [
+    {
+        "name": "Jennifer",
+        "src": "./svg/pets-jennifer.svg",
+        "type": "Dog",
+        "breed": "Labrador",
+        "description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
+        "age": "2 months",
+        "inoculations": ["none"],
+        "diseases": ["none"],
+        "parasites": ["none"],
+        "id": "1"
+    },
+    {
+        "name": "Sophia",
+        "src": "./svg/pets-sophia.svg",
+        "type": "Dog",
+        "breed": "Shih tzu",
+        "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
+        "age": "1 month",
+        "inoculations": ["parvovirus"],
+        "diseases": ["none"],
+        "parasites": ["none"]
+        ,
+        "id": "2"
+    },
+    {
+        "name": "Woody",
+        "src": "./svg/pets-woody.svg",
+        "type": "Dog",
+        "breed": "Golden Retriever",
+        "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
+        "age": "3 years 6 months",
+        "inoculations": ["adenovirus", "distemper"],
+        "diseases": ["right back leg mobility reduced"],
+        "parasites": ["none"],
+        "id": "3"
+    },
+    {
+        "name": "Scarlett",
+        "src": "./svg/pets-scarlet.svg",
+        "type": "Dog",
+        "breed": "Jack Russell Terrier",
+        "description": "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
+        "age": "3 months",
+        "inoculations": ["parainfluenza"],
+        "diseases": ["none"],
+        "parasites": ["none"],
+        "id": "4"
+    },
+    {
+        "name": "Katrine",
+        "src": "./svg/pets-katrine.svg",
+        "type": "Cat",
+        "breed": "British Shorthair",
+        "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
+        "age": "6 months",
+        "inoculations": ["panleukopenia"],
+        "diseases": ["none"],
+        "parasites": ["none"],
+        "id": "5"
+    },
+    {
+        "name": "Timmy",
+        "src": "./svg/pets-timmy.svg",
+        "type": "Cat",
+        "breed": "British Shorthair",
+        "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
+        "age": "2 years 3 months",
+        "inoculations": ["calicivirus", "viral rhinotracheitis"],
+        "diseases": ["kidney stones"],
+        "parasites": ["none"],
+        "id": "6"
+    },
+    {
+        "name": "Freddie",
+        "src": "./svg/pets-freddie.svg",
+        "type": "Cat",
+        "breed": "British Shorthair",
+        "description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
+        "age": "2 months",
+        "inoculations": ["rabies"],
+        "diseases": ["none"],
+        "parasites": ["none"],
+        "id": "7"
+    },
+    {
+        "name": "Charly",
+        "src": "./svg/pets-charly.svg",
+        "type": "Dog",
+        "breed": "Jack Russell Terrier",
+        "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+        "age": "8 years",
+        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "diseases": ["deafness", "blindness"],
+        "parasites": ["lice", "fleas"],
+        "id": "8"
+    }
 ]
+let objJson1 = JSON.stringify(objJson);
+let objJson2 = JSON.parse(objJson1)
+
 
 let mas1 = []
 let buttonDn = document.getElementById('buttonLeft');
@@ -109,23 +269,24 @@ function getMasLength() {
 function inputElement(a, i) {
     let div = document.createElement('div');
     div.className = 'our__card';
-    div.id = mas[a].name;
+    div.id = objJson2[a].id;
     cardPets.appendChild(div);
 
     let img = document.createElement('img');
     img.className = 'pets_img';
-    img.src = String(mas[a].src);
-    img.alt = String(mas[a].name);
+    img.src = String(objJson2[a].src);
+    img.alt = String(objJson2[a].name);
     cardPets.children[i].appendChild(img);
 
     let pPets = document.createElement('p');
     pPets.className = 'pets_card_title';
-    pPets.textContent = String(mas[a].name);
+    pPets.textContent = String(objJson2[a].name);
     cardPets.children[i].appendChild(pPets);
 
     let buttonPets = document.createElement('button');
     buttonPets.className = 'button_primary';
     buttonPets.textContent = 'Learn more';
+    buttonPets.addEventListener('click', learnMore)
     cardPets.children[i].appendChild(buttonPets);
     return a, i;
 }
@@ -162,7 +323,7 @@ function indexMinesMines() {
 }
 
 function indexPlusPlus() {
-    Math.ceil(paigNumber.textContent = mas.length / getMasLength())
+    Math.ceil(paigNumber.textContent = objJson2.length / getMasLength())
     return init1()
 }
 
@@ -184,13 +345,13 @@ function init() {
         buttonDn.style = 'user-select: all;';
         buttonDnDn.style = 'user-select: all;';
     }
-    if (paigNumber.textContent >= mas.length / lengthMas) {
+    if (paigNumber.textContent >= objJson2.length / lengthMas) {
         buttonUp.disabled = true
         buttonUpUp.disabled = true
         buttonUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
         buttonUpUp.style = 'all: revert;width: 50px;height: 50px;border-radius: 50px;font-size: 20px;';
     }
-    else if (paigNumber.textContent < mas.length / lengthMas) {
+    else if (paigNumber.textContent < objJson2.length / lengthMas) {
         buttonUp.disabled = false
         buttonUpUp.disabled = false
         buttonUp.style = 'user-select: all;';
@@ -206,11 +367,11 @@ function init() {
 
     for (let a = lengthMas * paigNumber.textContent - lengthMas; a < lengthMas * paigNumber.textContent;) {
 
-        if (mas[a] === undefined) {
+        if (objJson2[a] === undefined) {
             break;
         }
         else if (mas1.length < lengthMas) {
-            mas1.push(mas[a]);
+            mas1.push(objJson2[a]);
             for (i; i < mas1.length;) {
                 inputElement(a, i)
                 a++;
@@ -232,7 +393,7 @@ function init1() {
     let lengthMas = getMasLength();
     let i = 0;
 
-    if (Math.ceil(paigNumber.textContent) == Math.ceil(mas.length / getMasLength())) {
+    if (Math.ceil(paigNumber.textContent) == Math.ceil(objJson2.length / getMasLength())) {
         buttonDn.disabled = false
         buttonDnDn.disabled = false
         buttonDn.style = 'user-select: all;';
@@ -247,21 +408,21 @@ function init1() {
     cliar(document.querySelector('#our__card_pets'))
     mas1 = [];
     let a;
-    if (mas.length % getMasLength() == 0) {
+    if (objJson2.length % getMasLength() == 0) {
         a = getMasLength()
     }
-    else if (mas.length % getMasLength() !== 0) {
-        a = mas.length % getMasLength()
-        a = mas.length - a
+    else if (objJson2.length % getMasLength() !== 0) {
+        a = objJson2.length % getMasLength()
+        a = objJson2.length - a
     }
 
-    for (a; a < mas.length;) {
-        if (mas[a] === undefined) {
+    for (a; a < objJson2.length;) {
+        if (objJson2[a] === undefined) {
             paigNumber.textContent = Math.ceil(paigNumber.textContent)
             break;
         }
         else if (mas1.length < lengthMas) {
-            mas1.push(mas[a]);
+            mas1.push(objJson2[a]);
             for (i; i < mas1.length;) {
                 inputElement(a, i)
                 a++;
